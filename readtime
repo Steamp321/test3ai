@@ -1,0 +1,28 @@
+import time
+
+def reading_time(text):
+    # Average reading speed (words per minute)
+    average_wpm = 200
+
+    # Split the text into words
+    words = text.split()
+    num_words = len(words)
+
+    # Calculate the estimated reading time in minutes
+    reading_time_minutes = num_words / average_wpm
+
+    return reading_time_minutes
+
+if __name__ == "__main__":
+    sample_text = """
+    In an increasingly globalized world, knowing multiple languages is becoming more and more valuable.
+    Learning a new language can open up opportunities for travel, work, and cultural exchange.
+    It also has cognitive benefits, improving memory and problem-solving skills.
+    """
+
+    start_time = time.time()
+    estimated_time = reading_time(sample_text)
+    end_time = time.time()
+
+    print(f"Estimated reading time: {estimated_time:.2f} minutes")
+    print(f"Time taken to calculate: {end_time - start_time:.5f} seconds")
